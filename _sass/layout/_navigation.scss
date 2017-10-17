@@ -1,0 +1,121 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the navigation
+// -----------------------------------------------------------------------------
+
+/// Navigation
+
+.navigation {
+    box-shadow: 0 2px $highlight-color;
+    padding: 0 1em;
+    margin: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    background-color: $white;
+    /// Navigation Menu - http://refills.bourbon.io/unstyled/ (see "Navigation")
+    // Mobile view
+
+}
+.navigation-menu-button {
+    display: block;
+    float: right;
+    margin: 0;
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    color: $navigation-color;
+    text-decoration: none;
+    .icon-menu {
+        fill : $navigation-color;
+    }
+    &:link {
+        color: $navigation-color;
+        text-decoration: none;
+    }
+    &:hover, &:active {
+        text-decoration: none;
+        color: tint($navigation-color,20%);
+        /// menu icon
+        .icon-menu {
+            fill : tint($navigation-color,20%);
+        }
+    }
+    @include media ($tablet) {
+        display: none;
+    }
+}
+// Nav menu
+.navigation-wrapper {
+    @include outer-container;
+    @include clearfix;
+    position: relative;
+}
+.logo {
+    float: left;
+    height: 4em;
+    @include media ($tablet) {
+        padding-left: $em-base;
+    }
+    img {
+        max-height: 2.75em;
+        margin-top: 0.25em;
+        padding-right: 1em;
+    }
+    span {
+        font-size: 1.25em;
+    }
+}
+nav {
+    float: none;
+    padding-top: 1em;
+    @include media ($tablet) {
+        float: right;
+        line-height: 1.5em;
+    }
+}
+ul.navigation-menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    @include media ($tablet) {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    &.show {
+        display: block;
+    }
+}
+// Nav items
+ul li.nav-link {
+    display: block;
+    text-align: right;
+    width: 100%;
+    padding: 0.25em 0;
+    @include media ($tablet) {
+        background: transparent;
+        display: inline;
+        text-decoration: none;
+        width: auto;
+    }
+}
+li.nav-link {
+    a {
+        display: inline-block;
+        @include media ($tablet) {
+            padding-right: 1.5em;
+        }
+    }
+    &:last-child a {
+        @include media ($tablet) {
+            padding-right: 1em;
+        }
+    }
+}
+.menu-title {
+    font-size: 0.9em;
+    font-weight: 700;
+}

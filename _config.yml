@@ -1,6 +1,7 @@
 # External gems
 gems:
   - jekyll-sitemap
+  - jekyll-paginate
 
 exclude:
   - "/vendor/"
@@ -8,7 +9,7 @@ exclude:
 # Site settings
 title: Neat Whiskey
 subtitle: A base theme built on Bourbon and Neat
-name: Neil C Smith
+name: Eye Division
 description: A base theme built on Bourbon and Neat
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
@@ -17,7 +18,7 @@ baseurl: ""
 # the base hostname & protocol for your site
 url: "http://www.example.com"
 logo: "/assets/logo.png"
-email: neil@eyedivision.com
+email: support@eyedivision.com
 
 # Build settings
 markdown: kramdown
@@ -25,6 +26,8 @@ paginate: 5
 paginate_path: "/page:num/"
 inter_post_navigation: false
 permalink: pretty
+
+highlightjs_theme: "monokai-sublime"
 
 # Image CDN
 imagecdn:
@@ -46,20 +49,25 @@ defaults:
             type: "projects"
         values:
             layout: "project"
-            
+
+
+# Disqus comments
+# disqus_shortname:
 
 # Google analytics
 # ga_tracking_id: "UA-XXXX-1"
 
+# Google Recaptcha used for contact form
+# recaptcha_site_key: "6LcNYBQUAAAAAALGOjCFo1CKxb65aFTFelMJo1YF"
 
 # Social icons and sharing options
 #
 # Social settings are used in two places:
 # * In the footer, as links to your personal profiles
 # * After each blog post for sharing widgets
-# 
+#
 # Example:
-# 
+#
 # social:
 #   - name: Twitter                         # Name of the service
 #     icon: twitter                         # Font Awesome icon to use (minus fa- prefix)
@@ -69,17 +77,17 @@ defaults:
 #     share: true                           # Include in the "Share" section of posts
 social:
   - name: Twitter
-    icon: twitter
-    username: EyeDivision
+    icon: icon-twitter_sign
+    username: '@EyeDivision'
     url: https://twitter.com/EyeDivision
     desc: Follow us on Twitter
     share: true
 
   - name: Facebook
-    icon: facebook
+    icon: icon-facebook_sign
     username: eyedivision
-    url: 
-    desc: Like us on Facebook
+    url: https://www.facebook.com/eyedivision
+    desc: Like on Facebook
     share: true
 
   - name: GitHub
@@ -98,36 +106,36 @@ social:
 
   - name: YouTube
     icon: youtube
-    username: 
-    url: 
+    username:
+    url:
     desc: Subscribe on YouTube
     share: false
 
   - name: Instagram
-    icon: instagram
-    username: 
-    url: 
+    icon: icon-instagram
+    username: '@eyedivision'
+    url: https://instagram.com/eyedivision
     desc: Follow me on Instagram
     share: false
 
   - name: Pinterest
     icon: pinterest
-    username: 
-    url: 
+    username:
+    url:
     desc: Follow me on Pinterest
     share: true
 
   - name: SoundCloud
     icon: soundcloud
-    username: 
-    url: 
+    username:
+    url:
     desc: Follow me on SoundCloud
     share: false
 
   - name: Vimeo
     icon: vimeo-square
-    username: 
-    url: 
+    username:
+    url:
     desc: Follow me on Vimeo
     share: false
 

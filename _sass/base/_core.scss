@@ -1,0 +1,160 @@
+
+///	Globals
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* sticky footer from https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    @include display(flex);
+    @include flex-direction(column);
+}
+
+.navigation, .site-footer {
+    @include flex(none);
+}
+
+main {
+    display: block;
+    @include flex(1 0 auto);
+}
+
+ol.default {
+    @extend %default-ol;
+}
+
+ul.default {
+    @extend %default-ul;
+}
+
+code {
+    background-color: #eee;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0 3px;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+///	Body
+
+#content-header {
+    @include outer-container;
+}
+
+#content {
+    @include outer-container;
+    padding: 1em;
+}
+///	index.html
+
+.post-list {
+    padding-top: 1em !important;
+    @extend %default-ul;
+}
+.post-meta {
+    @include outer-container;
+    padding: 0 1em;
+    color: $medium-gray;
+    .post-date {
+        @include span-columns(6);
+        text-align: left;
+        font-size: 0.9em;
+    }
+    .post-categories {
+        @include span-columns(6);
+        margin-right: 0;
+        text-align: right;
+        font-size: 0.9em;
+    }
+}
+.pagination {
+    padding-top: 2em;
+    text-align: center;
+    color: $medium-gray;
+    .page-number {
+        padding: 0 1em;
+    }
+}
+.site-header-container {
+    color: $white;
+    background-color: $highlight-color;
+    .site-header{
+        .title {
+            font-size: modular-scale(6);
+        }
+        .subtitle {
+            text-transform: uppercase;
+            font-size: modular-scale(1);
+        }
+    }
+}
+img {
+    max-width: 100%;
+}
+
+
+/// Headers
+
+#content-header {
+    padding: 0;
+}
+
+#page-title {
+    padding-top: 6em;
+    h1, p {
+        @include outer-container;
+        padding: 0 20px;
+        margin-bottom: 0;
+        background-color: $secondary-color;
+        color: $white;
+        font-weight: normal;
+    }
+    h1 {
+        text-transform: uppercase;
+        font-size: 1.4em;
+        @include media($mobile) {
+            font-size: 2em;
+        }
+    }
+    p {
+        font-size: 1.2em;
+        padding-bottom: 0.6em;
+    }
+}
+.has-cover {
+    #content-header {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        position: relative;
+        height: 60vh;
+        background-position: 50% 40%;
+        background-size: cover;
+        @include media($tablet) {
+            background-attachment: fixed;
+            height: 80vh;
+        }
+    }
+
+    #page-title {
+        width: 100%;
+        padding-top: 0;
+        position: absolute;
+        bottom: 0;
+    }
+
+}
+
+

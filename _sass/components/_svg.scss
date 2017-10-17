@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// This file contains styles for SVG icons
+// ------------
+/// SVG icons
+.icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+a:hover .icon { /// hover colour
+    fill: $secondary-color;
+}
+.icon--readmore {
+    fill: $white;
+    margin-bottom: -5px;
+    width: 20px;
+    height: 20px;
+}
+.icon--post {
+    fill: $action-color;
+    margin-bottom: -5px;
+    width: 20px;
+    height: 20px;
+}
+.icon--inactive {
+    fill: $medium-gray;
+}
+.icon--logo {
+    fill: $highlight-color;
+    width: 20px;
+    height: 20px;
+}
+.icon-facebook_sign { fill: $facebook; }
+.icon-instagram { fill: $instagram; }
+.icon-twitter_sign { fill: $twitter; }
+.icon-youtube { fill: $youtube; }
+.icon-soundcloud { fill: $soundcloud; }
+.icon-vimeo_square { fill: $vimeo; }
+.icon-pinterest { fill: $pinterest; }
+.icon-mail { fill: $action-color; }
+.icon-white { fill: $white !important; }
+/// vertical align SVG icons in the centre
+a svg {
+    display: inline-block;
+    vertical-align: middle;
+}
