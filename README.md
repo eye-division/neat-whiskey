@@ -1,6 +1,6 @@
 # Neat Whiskey
 
-Neat Whiskey is a (work in progress) base theme and configuration for [Jekyll](http://jekyllrb.com/), based on Bourbon and Neat. It is a fork of the [Centratrium][centrarium] custom theme by [Ben Centra][bencentra].
+Neat Whiskey from [Eye Division][ed] is a base theme and configuration for [Jekyll](http://jekyllrb.com/), based on [Bourbon][bourbon] and [Neat][neat]. It is a fork of the [Centratrium][centrarium] custom theme by [Ben Centra][bencentra] initially reworked by [Neil C Smith][ncs].
 
 Built with these awesome libraries: 
 * [Bourbon][bourbon] 
@@ -10,6 +10,7 @@ Built with these awesome libraries:
 * [Font Awesome][fontawesome]
 * [HighlightJS][highlightjs]
 * [Lightbox][lightbox]
+* [Flexslider][flexslider]
 
 ## Features
 
@@ -19,9 +20,15 @@ This theme comes with a number of features, including:
 * Pagination enabled by default
 * Archiving of posts by categories and tags
 * Disqus integration for post comments
-* Lightbox for viewing full-screen photos and albums
+* Lightbox2 for viewing full-screen photos and albums
 * Google Analytics with custom page name tracking
+* Google Recaptcha for CloudCannon integrated contact form
 * Social media integration (Twitter, Facebook, LinkedIn, GitHub, and more)
+* SVG icons from Icomoon
+* Flexslider for simple slider
+* Better Bourbon Buttons Neato add-on
+* Designed for use on CloudCannon hosting for customer editing
+* uses imgIX as image CDN on staging and production
 
 ## Installation
 
@@ -36,7 +43,7 @@ If your site already uses Jekyll, follow these steps:
 Don't forget to install Jekyll and other dependencies:
 ```bash
 # cd into project directory
-cd centrarium
+cd neat-whiskey
 # install Bundler if you don't have it already
 gem install bundler
 # install jekyll, jekyll-archives, and jekyll-sitemap
@@ -50,6 +57,10 @@ If you want change the CSS of the theme, you'll probably want to check out these
 * `base/_variables.scss`: Common values found throughout the project, including base font size, font families, colors, and more.
 * `base/_typography.scss`: Base typography values for the site (see `typography.html` for a demonstration)
 * `_layout.scss`: The primary styles for the layout and design of the theme. 
+
+### SASS
+
+We're using the [SASS writing guidelines][sass] by Hugo Giraudel, and SassDOC  
 
 ### Important Variables
 
@@ -87,6 +98,12 @@ All configuration options can be found in `_config.yml`.
 
 A sitemap is also generated using [jekyll-sitemap][sitemap].
 
+### Image CDN
+
+[imgIX][ix] provide content resizing and distribution on-the-fly if set up. Set up different Web Folder sources for each CloudCannon site - particularly if using Staging and Production Jekyll environments. 
+
+* __imagecdn:__ Staging and production specific URLs from imgIX
+
 ### Disqus Settings
 
 You can enable [Disqus][disqus] comments for you site by including one config option:
@@ -101,6 +118,8 @@ You can enable basic [Google Analytics][ga] pageview tracking by including your 
 
 * __ga_tracking_id__: The Tracking ID for your website. You can find it on your Google Analytics dashboard. If the property is set, Google Analytics will be added to the footer of each page.
 
+* __recaptcha_site_key__: The Site key for your website. If the property is set, Google reCAPTCHA will be added to the contact form.
+
 ### Social Settings
 
 Your personal social network settings are combined with the social sharing options. In the __social__ seciton of `_config.yml`, include an entry for each network you want to include. For example:
@@ -109,8 +128,8 @@ Your personal social network settings are combined with the social sharing optio
 social:
   - name: Twitter                         # Name of the service
     icon: twitter                         # Font Awesome icon to use (minus fa- prefix)
-    username: TheBenCentra                # (User) Name to display in the footer link
-    url: https://twitter.com/TheBenCentra # URL of your profile (leave blank to not display in footer)
+    username: @eyedivision                # (User) Name to display in the footer link
+    url: https://twitter.com/EyeDivision # URL of your profile (leave blank to not display in footer)
     desc: Follow me on Twitter            # Description to display as link title, etc
     share: true                           # Include in the "Share" section of posts
 ```
@@ -130,6 +149,17 @@ descriptions:
     desc: "Posts describing Jekyll setup techniques."
 ```
 
+### Icon font
+
+A bunch of basic font icons from [IcoMoon][im] have been included in the _includes/svg folder.
+
+This file is then included in the head.html document for every page.
+
+Usage: 
+```
+<svg class="icon {{ social.icon }}"><use xlink:href="#{{ social.icon }}" /></svg>
+```
+
 ## License
 
 MIT. See [LICENSE.MD](https://github.com/eye-division/neat-whiskey/blob/master/LICENSE.md).
@@ -137,14 +167,22 @@ MIT. See [LICENSE.MD](https://github.com/eye-division/neat-whiskey/blob/master/L
 [centrarium]: https://github.com/bencentra/centrarium
 [bencentra]: http://bencentra.com
 [bourbon]: http://bourbon.io/
+[bundler]: http://bundler.io/
+[ed]: https://eyedivision.com/
+[flexslider]: https://github.com/woocommerce/FlexSlider
 [neat]: http://neat.bourbon.io/
 [bitters]: http://bitters.bourbon.io/
 [refills]: http://refills.bourbon.io/
 [fontawesome]: http://fortawesome.github.io/Font-Awesome/
 [highlightjs]: https://highlightjs.org/
+[im]: https://icomoon.io/
+[ix]: https://www.imgix.com/
 [lightbox]: http://lokeshdhakar.com/projects/lightbox2/
 [cover]: https://www.flickr.com/photos/79666107@N00/3796678503/in/photolist-6MuYfc-61Rtft-8XzPmY-a6Cozm-54eSMs-6oMJmk-aepZQq-9YkPHp-fiAEGE-dVP4Z5-oxPyJP-atKUFJ-9YHWA5-9YF2f2-9YF2gR-9YHVGN-9YHVvs-qZYYQ6-4JqP2i-a2peGy-9YHVUm-9YHVF7-9YHVCL-9YF3NK-cYteMo-aiPmb9-69dtAi-9YF21x-4aWpmn-7SLiUL-77pqVX-8vXbYv-4HGDSH-a2h5P1-8LsZrQ-9aj1ez-auPZ7q-9YHVMd-9YF2bi-9YF23D-8LpWpn-9an6KL-9YHVZL-dqZ3Cz-2GuvnX-9YHWUo-9YHVWd-p5Roh5-i1zTbv-6sYrUT
 [disqus]: https://disqus.com/
-[ga]: http://www.google.com/analytics/
+[ga]: https://www.google.com/analytics/
+[gr]: https://www.google.com/recaptcha/admin#list
 [archives]: https://github.com/jekyll/jekyll-archives
 [sitemap]: https://github.com/jekyll/jekyll-sitemap
+[sass]: https://sass-guidelin.es/
+[ncs]: http://www.neilcsmith.net/

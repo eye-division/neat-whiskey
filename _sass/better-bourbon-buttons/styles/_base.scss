@@ -1,0 +1,22 @@
+
+@import "flat";
+@import "simple";
+
+@mixin bbb_common_styling {
+  font: inherit;
+  padding: 7px 14px;
+  border-radius: 3px;
+
+  border: none;
+  display: inline-block;
+
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

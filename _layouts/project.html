@@ -31,8 +31,8 @@ layout: default
     <section class="image-gallery">
       {% for image in page.images %}
         {% if image.image_path %}
-        <a href="{% include imgpath.html src=image.image_path width=1280 %}" data-lightbox="gallery" data-title="{{ image.description }}">
-            {% include img.html src=image.image_path width=120 height=120 alt=image.description %}
+        <a href="{% include imgpath.html src=image.image_path width=1280 %}" data-lightbox="gallery" data-title="{{ image.image_description }}">
+            {% include img.html src=image.image_path width=120 height=120 alt=image.image_description %}
         </a>
         {% endif %}
       {% endfor %}

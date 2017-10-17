@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to CloudCannon
+// -----------------------------------------------------------------------------
+
+/// Editor link
+
+.editor-link {
+  display: none;
+}
+
+.cms-editor-active .editor-link {
+  display: block;
+}

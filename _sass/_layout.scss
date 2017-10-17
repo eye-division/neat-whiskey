@@ -1,5 +1,33 @@
+// 1. Configuration and helpers
+// Bourbon and Neat are already imported
 
-@import
-    "layout-core",
-    "layout-projects"
-;
+
+// 2. Vendors
+@import 'vendor/flexslider';
+@import 'vendor-extensions/flexslider';
+@import 'vendor-extensions/lightbox';
+
+// 3. Base
+@import 'base/core';
+
+// 4. Layout
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/navigation';
+@import 'layout/forms';
+
+// 5. Components
+@import 'better-bourbon-buttons/bbb';
+@import 'components/post';
+@import 'components/cloudcannon';
+//@import 'components/cover';
+@import 'components/svg';
+
+// 6. Page-specific
+@import 'pages/projects';
+
+// 7. Themes
+@import 'theme/vanilla';
+
+// 8. Shame
+@import 'shame';

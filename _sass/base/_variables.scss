@@ -1,10 +1,10 @@
 // Google Fonts
-@import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700,300|Roboto:400,700,300|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300|Lato:300,400);
 
 // Typography
-$base-font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; // $helvetica;
-$heading-font-family: "Roboto Slab", "Helvetica Neue", "Helvetica", "Arial", sans-serif; // $base-font-family;
-
+$base-font-family: 'Open Sans', Helvetica, Arial, sans-serif !default;
+$heading-font-family: 'Lato', sans-serif;
+$subheading-font-family: 'Lato', sans-serif;
 // Font Sizes
 $base-font-size: $em-base; // 16px
 
@@ -22,6 +22,7 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
+$black: rgb(17, 17, 17);
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
@@ -29,24 +30,62 @@ $blue: #2980b9;
 $background-grey: #373535;
 $white: #fff;
 
+// Flat UI Colors. For more, see http://flatuicolors.com/
+$turquoise: rgb(26, 188, 156);  // Turqoise
+$green: rgb(39, 174, 96);     // Nephritis
+$blue: rgb(41, 128, 185);       // Belize Hole
+$purple: rgb(142, 68, 173);     // Wisteria
+$orange: rgb(211, 84, 0);     // Pumpkin
+$red: rgb(192, 57, 43);       // Pomegranate
+$gray: rgb(127, 140, 141);        // Asbestos
+$dark-gray: rgb(51, 51, 51) !default;
+
+// Social Media Brand Colors */
+$twitter: rgb(0, 172, 237);
+$facebook: rgb(59, 89, 152);
+$googleplus: rgb(221, 75, 57);
+$pinterest: rgb(203, 32, 39);
+$linkedin: rgb(0, 123, 182);
+$youtube: rgb(187, 0, 0);
+$vimeo: rgb(26, 183, 234);
+$tumblr: rgb(50, 80, 109);
+$instagram: rgb(188, 42, 141);
+$flickr: rgb(255, 0, 132);
+$dribbble: rgb(234, 76, 137);
+$quora: rgb(168, 36, 0);
+$foursquare: rgb(0, 114, 177);
+$forrst: rgb(91, 154, 104);
+$vk: rgb(69, 102, 142);
+$wordpress: rgb(33, 117, 155);
+$stumbleupon: rgb(235, 72, 35);
+$yahoo: rgb(123, 0, 153);
+$blogger: rgb(251, 143, 61);
+$soundcloud: rgb(255, 58, 0);
+
+
 // Font Colors
 $base-background-color: #fff;
 $base-font-color: $dark-gray;
-$action-color: $blue;
+
+$action-color: rgb(0,161,154);
 $highlight-color: tint($action-color, 33%);
+$secondary-color: shade($action-color, 33%);
+// Accessible link colours
+$aaa-link: rgb(51, 68, 221);
+$aaa-hover: rgb(181, 0, 16);
+$aaa-visited: rgb(128, 65, 128);
+
+// navigation colours
+$navigation-color: $black;
+$navigation-color-hover: $medium-gray;
+$navigation-active-link-color: transparentize(white, 0.5);
 
 // Border
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
+$base-border-radius: 3px !default;
 
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
 
-// Screen sizes
-$mobile: 640px;
-$tablet: 960px;
-
-$max-width: rem(1200);
-$medium-screen: $mobile;
-$large-screen: $tablet;
